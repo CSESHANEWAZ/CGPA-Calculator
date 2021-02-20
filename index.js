@@ -1,0 +1,1 @@
+$("#calculate_btn").hide()
