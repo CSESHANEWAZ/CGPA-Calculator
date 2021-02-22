@@ -13,16 +13,21 @@ $(document).ready(function () {
     $("#course_6").hide();
     $("#calculate_btn").hide();
     $("#result").hide();
+    $("#again_btn").hide();
 });
 
-$("#next_btn").click(function () {
-    counter++;
+$("#next_btn").click(function () {    
     if (counter == 1) {
-        $("#previous_semester").hide();
-        $("#current_semester").show();
-        $("#course_selector").show();
-    }
-    else if (counter == 2) {
+        if(($("#credit_completed").val() != "") && ($("#current_cgpa").val() != "")) {
+            $("#previous_semester").hide();
+            $("#current_semester").show();
+            $("#course_selector").show();
+            counter++;
+        } else {
+            alert("Please fill up all the fields.");
+        }
+
+    } else if (counter == 2) {
         $("#course_selector").hide();
         $("#next_btn").hide();
         $("#calculate_btn").show();
@@ -35,8 +40,7 @@ $("#next_btn").click(function () {
             $("#course_5").hide();
             $("#course_6").hide();
 
-        }
-        else if ($("#current_sem_course").val() == 3) {
+        } else if ($("#current_sem_course").val() == 3) {
             $("#course_1").show();
             $("#course_2").show();
             $("#course_3").show();
@@ -44,8 +48,7 @@ $("#next_btn").click(function () {
             $("#course_5").hide();
             $("#course_6").hide();
 
-        }
-        else if ($("#current_sem_course").val() == 4) {
+        } else if ($("#current_sem_course").val() == 4) {
             $("#course_1").show();
             $("#course_2").show();
             $("#course_3").show();
@@ -53,8 +56,7 @@ $("#next_btn").click(function () {
             $("#course_5").hide();
             $("#course_6").hide();
 
-        }
-        else if ($("#current_sem_course").val() == 5) {
+        } else if ($("#current_sem_course").val() == 5) {
             $("#course_1").show();
             $("#course_2").show();
             $("#course_3").show();
@@ -62,8 +64,7 @@ $("#next_btn").click(function () {
             $("#course_5").show();
             $("#course_6").hide();
 
-        }
-        else if ($("#current_sem_course").val() == 6) {
+        } else if ($("#current_sem_course").val() == 6) {
             $("#course_1").show();
             $("#course_2").show();
             $("#course_3").show();
@@ -75,9 +76,16 @@ $("#next_btn").click(function () {
     }
 });
 
-$("#calculate_btn").click(function () {
+
+
+
+
+$("#calculate_btn").click(function (){
     var credit_completed = $("#credit_completed").val();
     var current_cgpa = $("#current_cgpa").val();
+
+    credit_completed = parseFloat(credit_completed);
+    current_cgpa = parseFloat(current_cgpa);
 
 
     if ($("#current_sem_course").val() == 2) {
@@ -93,6 +101,12 @@ $("#calculate_btn").click(function () {
             var c2_credit = $("#credit_completed_2").val();
             var c2_gpa = $("#current_cgpa_2").val();
 
+            c1_credit = parseFloat(c1_credit);
+            c1_gpa = parseFloat(c1_gpa);
+
+            c2_credit = parseFloat(c2_credit);
+            c2_gpa = parseFloat(c2_gpa);
+
             //cgpa calculation
             var current_sum = (c1_credit * c1_gpa) + (c2_credit * c2_gpa);
             var current_credit = c1_credit + c2_credit;
@@ -102,6 +116,7 @@ $("#calculate_btn").click(function () {
 
             est_gpa = current_sum / current_credit;
             est_cgpa = total_sum / total_credit;
+
 
             $("#est_gpa").val(Math.round(est_gpa * 100) / 100);
             $("#est_cgpa").val(Math.round(est_cgpa * 100) / 100);
@@ -115,13 +130,14 @@ $("#calculate_btn").click(function () {
             $("#course_5").hide();
             $("#course_6").hide();
             $("#calculate_btn").hide();
+            $("#card2").hide();
             $("#again_btn").show();
-        } else {
-            alert("Please fill up all the fields.");
-        }
-    }
+            
+        } else{
+            alert("Please fill up all the field.");
+        } 
 
-    else if ($("#current_sem_course").val() == 3) {
+    } else if ($("#current_sem_course").val() == 3) {
 
         if (($("#credit_completed_1").val() != "") &&
             ($("#current_cgpa_1").val() != "") &&
@@ -140,6 +156,17 @@ $("#calculate_btn").click(function () {
             var c3_gpa = $("#current_cgpa_3").val();
 
 
+
+            c1_credit = parseFloat(c1_credit);
+            c1_gpa = parseFloat(c1_gpa);
+
+            c2_credit = parseFloat(c2_credit);
+            c2_gpa = parseFloat(c2_gpa);
+
+            c3_credit = parseFloat(c3_credit);
+            c3_gpa = parseFloat(c3_gpa);
+
+
             //cgpa calculation
             var current_sum = (c1_credit * c1_gpa) + (c2_credit * c2_gpa) + (c3_credit * c3_gpa);
             var current_credit = c1_credit + c2_credit + c3_credit;
@@ -149,6 +176,7 @@ $("#calculate_btn").click(function () {
 
             est_gpa = current_sum / current_credit;
             est_cgpa = total_sum / total_credit;
+
 
             $("#est_gpa").val(Math.round(est_gpa * 100) / 100);
             $("#est_cgpa").val(Math.round(est_cgpa * 100) / 100);
@@ -166,9 +194,8 @@ $("#calculate_btn").click(function () {
         } else {
             alert("Please fill up all the fields.");
         }
-    }
 
-    else if ($("#current_sem_course").val() == 4) {
+    } else if ($("#current_sem_course").val() == 4) {
 
         if (($("#credit_completed_1").val() != "") &&
             ($("#current_cgpa_1").val() != "") &&
@@ -192,6 +219,19 @@ $("#calculate_btn").click(function () {
             var c4_gpa = $("#current_cgpa_4").val();
 
 
+            c1_credit = parseFloat(c1_credit);
+            c1_gpa = parseFloat(c1_gpa);
+
+            c2_credit = parseFloat(c2_credit);
+            c2_gpa = parseFloat(c2_gpa);
+
+            c3_credit = parseFloat(c3_credit);
+            c3_gpa = parseFloat(c3_gpa);
+
+            c4_credit = parseFloat(c4_credit);
+            c4_gpa = parseFloat(c4_gpa);
+
+
             //cgpa calculation
             var current_sum = (c1_credit * c1_gpa) + (c2_credit * c2_gpa) + (c3_credit * c3_gpa)
                 + (c4_credit * c4_gpa);
@@ -202,6 +242,7 @@ $("#calculate_btn").click(function () {
 
             est_gpa = current_sum / current_credit;
             est_cgpa = total_sum / total_credit;
+
 
             $("#est_gpa").val(Math.round(est_gpa * 100) / 100);
             $("#est_cgpa").val(Math.round(est_cgpa * 100) / 100);
@@ -220,9 +261,8 @@ $("#calculate_btn").click(function () {
         } else {
             alert("Please fill up all the fields.");
         }
-    }
 
-    else if ($("#current_sem_course").val() == 5) {
+    } else if ($("#current_sem_course").val() == 5) {
 
         if (($("#credit_completed_1").val() != "") &&
             ($("#current_cgpa_1").val() != "") &&
@@ -249,6 +289,22 @@ $("#calculate_btn").click(function () {
 
             var c5_credit = $("#credit_completed_5").val();
             var c5_gpa = $("#current_cgpa_5").val();
+
+
+            c1_credit = parseFloat(c1_credit);
+            c1_gpa = parseFloat(c1_gpa);
+
+            c2_credit = parseFloat(c2_credit);
+            c2_gpa = parseFloat(c2_gpa);
+
+            c3_credit = parseFloat(c3_credit);
+            c3_gpa = parseFloat(c3_gpa);
+
+            c4_credit = parseFloat(c4_credit);
+            c4_gpa = parseFloat(c4_gpa);
+
+            c5_credit = parseFloat(c5_credit);
+            c5_gpa = parseFloat(c5_gpa);
 
 
             //cgpa calculation
@@ -279,9 +335,8 @@ $("#calculate_btn").click(function () {
         } else {
             alert("Please fill up all the fields.");
         }
-    }
 
-    else if ($("#current_sem_course").val() == 6) {
+    } else if ($("#current_sem_course").val() == 6) {
 
         if (($("#credit_completed_1").val() != "") &&
             ($("#current_cgpa_1").val() != "") &&
@@ -313,6 +368,25 @@ $("#calculate_btn").click(function () {
 
             var c6_credit = $("#credit_completed_6").val();
             var c6_gpa = $("#current_cgpa_6").val();
+
+
+            c1_credit = parseFloat(c1_credit);
+            c1_gpa = parseFloat(c1_gpa);
+
+            c2_credit = parseFloat(c2_credit);
+            c2_gpa = parseFloat(c2_gpa);
+
+            c3_credit = parseFloat(c3_credit);
+            c3_gpa = parseFloat(c3_gpa);
+
+            c4_credit = parseFloat(c4_credit);
+            c4_gpa = parseFloat(c4_gpa);
+
+            c5_credit = parseFloat(c5_credit);
+            c5_gpa = parseFloat(c5_gpa);
+
+            c6_credit = parseFloat(c6_credit);
+            c6_gpa = parseFloat(c6_gpa);
 
 
             //cgpa calculation
