@@ -1,3 +1,3 @@
 # CGPA-Calculator
 
-https://cseshanewaz.github.io/CGPA-Calculator/
+Demo: https://cseshanewaz.github.io/CGPA-Calculator/
