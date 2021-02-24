@@ -11,7 +11,7 @@ Demo: https://cseshanewaz.github.io/CGPA-Calculator/
                    <div class="row" style="padding-top: 50px;">
                     <div class="col-sm-12">
                         <div align="center">
-                            <img src="images/Demo.png" width="200px" />
+                            <img src="images/Demo.png" width="600px" />
                             <br><br>
                             <small style="padding:10px;">Built with ❤︎ by <a target="_blank" href="https://cseshanewaz.me/">Muhammad Shanewaz</a></small>
                             <br><br>
