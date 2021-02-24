@@ -130,7 +130,7 @@ $("#calculate_btn").click(function (){
             $("#course_5").hide();
             $("#course_6").hide();
             $("#calculate_btn").hide();
-            $("#card2").hide();
+            $("#card2").show();
             $("#again_btn").show();
             
         } else{
