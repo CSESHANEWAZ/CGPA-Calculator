@@ -23,8 +23,7 @@ Demo: https://cseshanewaz.github.io/CGPA-Calculator/
                                 <a href="https://twitter.com/cseshanewaz/" target="_blank"><img
                                         src="https://themuseum.ca/wp-content/uploads/2018/05/580b57fcd9996e24bc43c53e-e1527261120714.png"
                                        width="30px" style="padding: 5px"></a>
-                            
-                          </p>
+                            </p>
                             <small>For any queries, reach me at <a
                                     href="mailto:cseshanewaz.me">cseshanewaz.me</a></small>
                             <br>
