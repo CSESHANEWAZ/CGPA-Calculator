@@ -25,7 +25,7 @@ Demo: https://cseshanewaz.github.io/CGPA-Calculator/
                                        width="30px" style="padding: 5px"></a>
                             </p>
                             <small>For any queries, reach me at <a
-                                    href="mailto:cseshanewaz.me">cseshanewaz.me</a></small>
+                                    href="mailto:cseshanewaz.me">cseshanewaz</a></small>
                             <br>
                             <small>Copyright © 2021 Muhammad Shanewaz</small>
                             <br>
